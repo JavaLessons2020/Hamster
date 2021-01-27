@@ -26,8 +26,13 @@ private final HamsterService hamsterService;
     @GetMapping("")
     public String show(Model model) throws SQLException, ClassNotFoundException {
         model.addAttribute("hamsters", hamsterService.getAll());
-
         return "show";
+    }
+
+    @RequestMapping(value = "hamsters", method = RequestMethod.GET)
+    public String showHamsterByName(@RequestParam (value = "name", required = false) String name, Model model) {
+        model.addAttribute("search", hamsterService.findByName(name));
+        return "hamster";
     }
 
 
