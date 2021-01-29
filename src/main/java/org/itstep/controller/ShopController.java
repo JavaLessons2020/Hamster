@@ -29,9 +29,9 @@ private final HamsterService hamsterService;
         return "show";
     }
 
-    @RequestMapping(value = "hamsters", method = RequestMethod.GET)
-    public String showHamsterByName(@RequestParam (value = "name", required = false) String name, Model model) {
-        model.addAttribute("search", hamsterService.findByName(name));
+    @GetMapping(value = "hamsters")
+    public String showHamsterByName(@RequestParam (value = "search", required = false) String name, Model model) {
+        model.addAttribute("getHamster", hamsterService.findByName(name));
         return "hamster";
     }
 
