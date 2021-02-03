@@ -2,8 +2,9 @@ package org.itstep.controller;
 
 
 import org.itstep.model.Hamster;
+import org.itstep.model.Owner;
 import org.itstep.service.HamsterService;
-import org.springframework.format.annotation.DateTimeFormat;
+import org.itstep.service.OwnerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -19,8 +20,11 @@ public class ShopController {
 
 private final HamsterService hamsterService;
 
-    public ShopController(HamsterService hamsterService) {
+private final OwnerService ownerService;
+
+    public ShopController(HamsterService hamsterService, OwnerService ownerService) {
         this.hamsterService = hamsterService;
+        this.ownerService = ownerService;
     }
 
     @GetMapping("")
@@ -48,13 +52,16 @@ private final HamsterService hamsterService;
     public String addProduct(Model model) {
         model.addAttribute("hamster", new Hamster());
         model.addAttribute("default", "Default value");
+        model.addAttribute("owners",ownerService.getAll());
         return "addHamster";
     }
 
 
     @PostMapping("/hamster/done")
-    public String postAdd(@ModelAttribute Hamster hamster)  { //, @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")LocalDateTime dateTime
+    public String postAdd(@RequestParam("owner_name") String name, @ModelAttribute Hamster hamster)  { //, @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")LocalDateTime dateTime
         hamster.setDateTime(LocalDateTime.now().minusNanos(1));
+        System.out.println("Owner name = " + name);
+        hamster.setOwner(ownerService.geyByName(name));
         hamsterService.save(hamster);
         return "redirect:/";
     }

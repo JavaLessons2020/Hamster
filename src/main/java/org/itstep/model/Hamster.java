@@ -15,7 +15,7 @@ public class Hamster {
     private LocalDateTime dateTime;
 
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "owner_id")
     private Owner owner;
 

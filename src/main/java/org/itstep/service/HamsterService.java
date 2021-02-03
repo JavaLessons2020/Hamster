@@ -35,6 +35,7 @@ public class HamsterService {
         jpa.save(hamster);
     }
 
+
     public Hamster findByName(String name){
         return jpa.findByName(name);
     }

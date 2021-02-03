@@ -3,16 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Hamster</title>
+    <style>
+        table, td, th{
+            border: 1px solid;
+        }
+    </style>
 </head>
 <body>
-<div>
-    Id:
-    <p th:text="${getHamster.id}"></p>
-    Name:
-    <p th:text="${getHamster.name}"></p>
-    Age:
-    <p th:text="${getHamster.age}"></p>
+<table>
+    <tr>
+        <th>Id:</th>
+        <th>Name:</th>
+        <th>Age:</th>
+    </tr>
+    <tr>
 
-</div>
+        <td th:text="${getHamster.id}"></td>
+
+        <td th:text="${getHamster.name}"></td>
+
+        <td th:text="${getHamster.age}"></td>
+    </tr>
+</table>
 </body>
 </html>

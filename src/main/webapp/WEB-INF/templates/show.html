@@ -16,21 +16,22 @@
 <form th:object="${hamster}" th:action="@{/hamsters}" method="get">
     <input type="text" name="search" id="search" th:value="${search}"/>
     <input type="submit" value="Search"/>
-    <div th:if="${not #lists.isEmpty(search)}">
-        <h2>Students List</h2>
-        <table class="table table-striped">
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Surname</th>
-            </tr>
-            <tr th:each="hamster: ${search}">
-                <td th:text="${hamster.id}">
-                    <!--<a href="/student/${student.idStudent}">idStudent</a></td>-->
-                <td th:text="${hamster.name}">name</td>
-            </tr>
-        </table>
-    </div>
+
+<!--    <div th:if="${not #lists.isEmpty(search)}">-->
+<!--        <h2>Students List</h2>-->
+<!--        <table class="table table-striped">-->
+<!--            <tr>-->
+<!--                <th>Id</th>-->
+<!--                <th>Name</th>-->
+<!--                <th>Surname</th>-->
+<!--            </tr>-->
+<!--            <tr th:each="hamster: ${search}">-->
+<!--                <td th:text="${hamster.id}">-->
+<!--                    &lt;!&ndash;<a href="/student/${student.idStudent}">idStudent</a></td>&ndash;&gt;-->
+<!--                <td th:text="${hamster.name}">name</td>-->
+<!--            </tr>-->
+<!--        </table>-->
+<!--    </div>-->
 </form>
 
 

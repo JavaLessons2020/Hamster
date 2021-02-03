@@ -10,12 +10,24 @@
     </style>
 </head>
 <body>
-<form action="#" th:action="@{/hamster/done}" th:object="${hamster}" method="post" >
+<form th:action="@{/hamster/done}" th:object="${hamster}" method="post" >
 
     <p>Name: <input type="text"  th:field="*{name}"/></p>
 
     <p>Age: <input type="number" th:field="*{age}"/></p>
 
+
+<!--    <select th:field="*{owner}">-->
+<!--        <option th:each="owner : ${owners}"-->
+<!--                th:value="${owner.id}"-->
+<!--                th:text="${owner.name}">Option</option>-->
+<!--    </select>-->
+
+    <select id="owner_name" name="owner_name">
+        <option th:each="owner : ${owners}"
+                th:value="${owner.name}"
+                th:text="${owner.name}">Option</option>
+    </select>
 
     <p><input type="submit" value="Submit"/>
 
