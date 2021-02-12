@@ -1,8 +1,7 @@
-package org.itstep.service;
+package org.itstep.dnepr.service;
 
-import org.itstep.model.Hamster;
-import org.itstep.model.Owner;
-import org.itstep.repository.OwnerJPA;
+import org.itstep.dnepr.repository.OwnerJPA;
+import org.itstep.dnepr.model.Owner;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

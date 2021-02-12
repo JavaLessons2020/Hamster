@@ -1,4 +1,4 @@
-package org.itstep.model;
+package org.itstep.dnepr.model;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

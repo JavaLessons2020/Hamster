@@ -1,9 +1,9 @@
-package org.itstep.service;
+package org.itstep.dnepr.service;
 
 
-import org.itstep.dao.HibernateHamsterDAO;
-import org.itstep.model.Hamster;
-import org.itstep.repository.HamsterJPA;
+import org.itstep.dnepr.dao.HibernateHamsterDAO;
+import org.itstep.dnepr.model.Hamster;
+import org.itstep.dnepr.repository.HamsterJPA;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

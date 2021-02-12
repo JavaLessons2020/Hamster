@@ -1,6 +1,6 @@
-package org.itstep.repository;
+package org.itstep.dnepr.repository;
 
-import org.itstep.model.Hamster;
+import org.itstep.dnepr.model.Hamster;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

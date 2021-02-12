@@ -1,10 +1,9 @@
-package org.itstep.controller;
+package org.itstep.dnepr.controller;
 
 
-import org.itstep.model.Hamster;
-import org.itstep.model.Owner;
-import org.itstep.service.HamsterService;
-import org.itstep.service.OwnerService;
+import org.itstep.dnepr.model.Hamster;
+import org.itstep.dnepr.service.HamsterService;
+import org.itstep.dnepr.service.OwnerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;

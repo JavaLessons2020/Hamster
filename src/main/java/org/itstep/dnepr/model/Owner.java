@@ -1,4 +1,4 @@
-package org.itstep.model;
+package org.itstep.dnepr.model;
 
 import java.util.HashSet;
 import java.util.Set;

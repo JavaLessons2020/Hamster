@@ -1,9 +1,9 @@
-package org.itstep.dao;
+package org.itstep.dnepr.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.itstep.model.Hamster;
+import org.itstep.dnepr.model.Hamster;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
