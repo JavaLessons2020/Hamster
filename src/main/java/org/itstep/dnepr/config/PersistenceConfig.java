@@ -41,8 +41,8 @@ public class PersistenceConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource){
         HibernateJpaVendorAdapter hibernateJpaVendorAdapter =
                 new HibernateJpaVendorAdapter();
-        //hibernateJpaVendorAdapter.setGenerateDdl(true);
-        //hibernateJpaVendorAdapter.setShowSql(true);
+       hibernateJpaVendorAdapter.setGenerateDdl(true);
+        hibernateJpaVendorAdapter.setShowSql(true);
 
         LocalContainerEntityManagerFactoryBean factoryBean =
                 new LocalContainerEntityManagerFactoryBean();

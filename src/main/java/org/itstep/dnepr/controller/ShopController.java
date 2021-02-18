@@ -26,7 +26,7 @@ private final OwnerService ownerService;
         this.ownerService = ownerService;
     }
 
-    @GetMapping("")
+    @GetMapping(value = {"/" , "/show"})
     public String show(Model model) throws SQLException, ClassNotFoundException {
         model.addAttribute("hamsters", hamsterService.getAll());
         return "show";
