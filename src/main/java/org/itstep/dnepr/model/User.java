@@ -1,7 +1,6 @@
 package org.itstep.dnepr.model;
 
 
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -13,7 +12,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "user")
-public class User implements UserDetails {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,8 +22,9 @@ public class User implements UserDetails {
 
     private String password;
 
+
     @ManyToMany(fetch = FetchType.EAGER)
-    Set<Role>roles = new HashSet<>();
+    Set<Role> roles = new HashSet<>();
 
     public Set<Role> getRoles() {
         return roles;
@@ -53,39 +53,11 @@ public class User implements UserDetails {
         this.email = email;
     }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return getRoles();
-    }
 
     public String getPassword() {
         return password;
     }
 
-    @Override
-    public String getUsername() {
-        return email;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
 
     public void setPassword(String password) {
         this.password = password;

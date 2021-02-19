@@ -15,6 +15,7 @@
 <h2>Search for name</h2>
 
 <form action="/logout" method="post">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
     <input type="submit" value="Logout">
 </form>
 
@@ -22,21 +23,21 @@
     <input type="text" name="search" id="search" th:value="${search}"/>
     <input type="submit" value="Search"/>
 
-<!--    <div th:if="${not #lists.isEmpty(search)}">-->
-<!--        <h2>Students List</h2>-->
-<!--        <table class="table table-striped">-->
-<!--            <tr>-->
-<!--                <th>Id</th>-->
-<!--                <th>Name</th>-->
-<!--                <th>Surname</th>-->
-<!--            </tr>-->
-<!--            <tr th:each="hamster: ${search}">-->
-<!--                <td th:text="${hamster.id}">-->
-<!--                    &lt;!&ndash;<a href="/student/${student.idStudent}">idStudent</a></td>&ndash;&gt;-->
-<!--                <td th:text="${hamster.name}">name</td>-->
-<!--            </tr>-->
-<!--        </table>-->
-<!--    </div>-->
+    <!--    <div th:if="${not #lists.isEmpty(search)}">-->
+    <!--        <h2>Students List</h2>-->
+    <!--        <table class="table table-striped">-->
+    <!--            <tr>-->
+    <!--                <th>Id</th>-->
+    <!--                <th>Name</th>-->
+    <!--                <th>Surname</th>-->
+    <!--            </tr>-->
+    <!--            <tr th:each="hamster: ${search}">-->
+    <!--                <td th:text="${hamster.id}">-->
+    <!--                    &lt;!&ndash;<a href="/student/${student.idStudent}">idStudent</a></td>&ndash;&gt;-->
+    <!--                <td th:text="${hamster.name}">name</td>-->
+    <!--            </tr>-->
+    <!--        </table>-->
+    <!--    </div>-->
 </form>
 
 
